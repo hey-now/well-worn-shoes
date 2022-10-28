@@ -14,7 +14,9 @@
         <a href="/dashboard" <%- title === 'Dashboard' ? 'class="active"' : '' %>>DASHBOARD</a> |
         <a href="/newShoes" <%- title === 'Create New Shoe' ? 'class="active"' : '' %>>CREATE</a> |
         <a href="/favShoes" <%- title === 'Favorites' ? 'class="active"' : '' %>>FAVORITES</a> |
-        <a href="/profile" <%- title === 'Profile' ? 'class="active"' : '' %>>PROFILE</a>
+        <a href="/profile" <%- title === 'Profile' ? 'class="active"' : '' %>>
+            <img src="<%= user.avatar %>" referrerpolicy="no-referrer" alt="avatar"><%= user.name %>
+        </a>
         <a href="/logout">LOG OUT</a>
     <% } else { %>
         <a href="/auth/google" class="login">LOG IN <img src="https://i.imgur.com/FHjYyi0.png"></a>
