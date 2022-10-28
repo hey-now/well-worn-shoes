@@ -4,7 +4,7 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Well Worn Shoes' });
 });
 
 router.get('/auth/google', passport.authenticate(
@@ -17,20 +17,20 @@ router.get('/auth/google', passport.authenticate(
   }
   ));
 
-  router.get('/oauth2callback', passport.authenticate(
-    'google',
-    {
-      successRedirect: '/',
-      // Change to what's best for YOUR app
-      failureRedirect: '/'
-    }
-  ));
+router.get('/oauth2callback', passport.authenticate(
+  'google',
+  {
+    successRedirect: '/',
+    // Change to what's best for YOUR app
+    failureRedirect: '/'
+  }
+));
 
-  router.get('/logout', function(req, res) {
-    req.logout(function() {
-      // Change path for your "landing" page
-      res.redirect('/');
-    });
+router.get('/logout', function(req, res) {
+  req.logout(function() {
+    // Change path for your "landing" page
+    res.redirect('/');
   });
+});
 
 module.exports = router;
