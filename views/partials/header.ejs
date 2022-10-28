@@ -7,19 +7,20 @@
   <body>
     <nav>
         <img src="https://imgur.com/s8cMcqV.jpeg" alt="logo">
-    </nav>
-    <a href="/home" <%- title === 'Explore Shoes' ? 'class="active"' : '' %>>HOME</a> |
-    <a href="/searchShoes">SEARCH</a> |
-    <% if(user) { %>
-        <a href="/dashboard" <%- title === 'Dashboard' ? 'class="active"' : '' %>>DASHBOARD</a> |
-        <a href="/newShoes" <%- title === 'Create New Shoe' ? 'class="active"' : '' %>>CREATE</a> |
-        <a href="/favShoes" <%- title === 'Favorites' ? 'class="active"' : '' %>>FAVORITES</a> |
-        <a href="/profile" <%- title === 'Profile' ? 'class="active"' : '' %>>
-            <img src="<%= user.avatar %>" referrerpolicy="no-referrer" alt="avatar"><%= user.name %>
-        </a>
-        <a href="/logout">LOG OUT</a>
-    <% } else { %>
-        <a href="/auth/google" class="login">LOG IN <img src="https://i.imgur.com/FHjYyi0.png"></a>
-    <% } %>  
+        <a href="/home" <%- title === 'Explore Shoes' ? 'class="active"' : '' %>>HOME</a> |
+        <a href="/searchShoes">SEARCH</a> |
+        <% if(user) { %>
+            <a class="options" href="/dashboard" <%- title === 'Dashboard' ? 'class="active"' : '' %>>DASHBOARD</a> |
+            <a class="options" href="/newShoes" <%- title === 'Create New Shoe' ? 'class="active"' : '' %>>CREATE</a> |
+            <a class="options" href="/favShoes" <%- title === 'Favorites' ? 'class="active"' : '' %>>FAVORITES</a> |
+            <a class="loginAvatar" href="/profile" <%- title === 'Profile' ? 'class="active"' : '' %>>
+                <img id="avatarNav" src="<%= user.avatar %>" referrerpolicy="no-referrer" alt="avatar">
+            </a>
+            <a class="login"href="/profile" <%- title === 'Profile' ? 'class="active"' : '' %>><%= user.name%></a>
+            <a href="/logout">LOG OUT</a>
+        <% } else { %>
+            <a href="/auth/google" class="login">LOG IN <img src="https://i.imgur.com/FHjYyi0.png"></a>
+        <% } %>
+    </nav>  
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>

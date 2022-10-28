@@ -1,14 +1,51 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  box-sizing: border-box;
 }
-
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas: 
+    "nav"
+    "main"
+    "footer"
+}
+body > nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 20px 0 30px;
+  background-color: rgb(150, 200, 217);
+  color: whitesmoke;
+}
+.options {
+  justify-content: left;
+}
+nav > img {
+  object-fit: contain;
+}
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E8ECEB;
+  padding: 20px;
+  overflow-y: scroll;
+}
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
 a {
-  color: #00B7FF;
+  color: whitesmoke;
 }
 img {
   height: 100px;
-  width: 100px;
 }
 .login {
   display: flex;
@@ -17,4 +54,10 @@ img {
 }
 .login img {
   height: 30px;
+}
+#avatarNav {
+  border-radius: 50%;
+  border: 5px solid red;
+  scale: 0.50;
+  margin-right: -75px;
 }
