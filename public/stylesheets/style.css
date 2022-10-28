@@ -10,3 +10,11 @@ img {
   height: 100px;
   width: 100px;
 }
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login img {
+  height: 30px;
+}
