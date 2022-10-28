@@ -33,7 +33,6 @@ body > main {
   align-items: center;
   background-color: #E8ECEB;
   padding: 20px;
-  overflow-y: scroll;
 }
 nav > a {
   margin: 20px;
