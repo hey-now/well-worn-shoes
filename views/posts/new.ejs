@@ -2,7 +2,21 @@
 
 <main>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    </main>
+    <form id="newShoe" action="">
+        <div id="imgUpload">
+            <input id="imgUploadText"type="text">
+            <p>Enter Image URL Here!</p>
+        </div>
+        <div id="postInfo">
+            <label for="">Add Title:</label>
+            <input type="text">
+            <label for="">Add Description:</label>
+            <input type="text">
+            <label for="">Add Location:</label>
+            <input type="text">
+            <button id="saveNew">Hang that Shoe!</button>
+        </div>
+    </form>
+</main>
 
 <%- include('../partials/footer') %>

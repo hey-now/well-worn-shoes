@@ -10,9 +10,9 @@
         <a href="/" <%- title === 'Explore Shoes' ? 'class="active"' : '' %>>HOME</a> |
         <a href="/search">SEARCH</a> |
         <% if(user) { %>
-            <a class="options" href="/posts/dashboard" <%- title === 'Dashboard' ? 'class="active"' : '' %>>DASHBOARD</a> |
-            <a class="options" href="/posts/favorites" <%- title === 'Favorites' ? 'class="active"' : '' %>>FAVORITES</a> |
-            <a class="options" href="/posts/new" <%- title === 'Create New Shoe' ? 'class="active"' : '' %>>CREATE</a> |
+            <a class="options" href="/posts/dashboard" <%- title === 'Dashboard' ? 'class="active"' : '' %>>Shoe Rack</a> |
+            <a class="options" href="/posts/favorites" <%- title === 'Favorites' ? 'class="active"' : '' %>>Favorite Shoes</a> |
+            <a class="options" href="/posts/new" <%- title === 'Create New Shoe' ? 'class="active"' : '' %>>New Shoe</a> |
             <a class="loginAvatar" href="/profile" <%- title === 'Profile' ? 'class="active"' : '' %>>
                 <img id="avatarNav" src="<%= user.avatar %>" referrerpolicy="no-referrer" alt="avatar">
             </a>

@@ -17,11 +17,11 @@ function favorites(req, res) {
 }
 
 function dashboard(req, res) {
-    res.render('posts/dashboard', {title: 'Dashboard'});
+    res.render('posts/dashboard', {title: 'Shoe Rack'});
 }
 
 function newPost(req, res) {
-    res.render('posts/new', {title: 'Add New Shoe!'});
+    res.render('posts/new', {title: 'Add A New Shoe!'});
 }
 
 function create() {

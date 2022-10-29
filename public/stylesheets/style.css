@@ -60,3 +60,22 @@ img {
   scale: 0.50;
   margin-right: -75px;
 }
+#newShoe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "imgUpload sidebar"
+    "imgUpload sidebar"
+    "imgUpload sidebar"
+}
+#imgUpload {
+  grid-area: imgUpload;
+}
+#postInfo {
+  grid-area: sidebar;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
