@@ -3,17 +3,17 @@
 <main>
     <h1><%= title %></h1>
     <form id="newShoe" action="/posts" method="POST">
-        <div id="imgUpload">
-            <input id="imgUploadText"type="text" name="imgUrl">
-            <p>Enter Image URL Here!</p>
+        <div id="imgUrl">
+            <input id="imgUrlText" type="text" name="imgUrl">
+            <p id="imgUrlText">Enter Image URL Here!</p>
         </div>
         <div id="postInfo">
-            <label for="">Add Title:</label>
-            <input type="text" name="title">
+            <label>Add Title:</label>
+            <textarea name="title"></textarea>
             <label for="">Add Description:</label>
-            <input type="text" name="description">
+            <textarea name="description"></textarea>
             <label for="">Add Location:</label>
-            <input type="text" name="destination">
+            <textarea name="destination"></textarea>
             <input type="submit" id="saveNew" value="Hang that Shoe!">
         </div>
     </form>

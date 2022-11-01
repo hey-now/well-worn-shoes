@@ -62,20 +62,42 @@ img {
 }
 #newShoe {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 500px 500px;
+  grid-template-rows: 500px 1fr 1fr;
   grid-template-areas:
     "imgUpload sidebar"
     "imgUpload sidebar"
     "imgUpload sidebar"
 }
-#imgUpload {
+#imgUrl {
   grid-area: imgUpload;
+  border: 5px solid grey;
+  background-image: url('https://imgur.com/brw99fp.gif');
+  background-size: cover;
 }
 #postInfo {
   grid-area: sidebar;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
+  border: 5px solid grey;
 }
-
+label {
+  align-self: center;
+  justify-self: center;
+  border: 2px solid grey;
+}
+#saveNew {
+  grid-column-end: span 2;
+}
+#show-page {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+#dash-post, #posts {
+  border: 5px solid grey;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}

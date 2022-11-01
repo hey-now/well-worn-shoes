@@ -7,7 +7,9 @@
         <div><%= p.destination %></div>
         <div><%= p.title %></div>
         <div>
-            <img src="<%= p.imgUrl %>" alt="image"></div>
+            <a href="/posts/<%= p._id %>">
+                <img src="<%= p.imgUrl %>" alt="image">
+            </a>
         <div><%= p.userName %></div>
         <div>
             <img src="<%= p.userAvatar %>" alt="">
