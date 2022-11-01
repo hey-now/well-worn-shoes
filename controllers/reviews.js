@@ -8,8 +8,16 @@ module.exports = {
 };
 
 function update(req, res) {
-
-}
+    Post.findOne({'reviews._id': req.params.id}, function(err, post) {
+      const reviewSubdoc = post.reviews.id(req.params.id);
+      if (!reviewSubdoc.user.equals(req.user._id)) return res.redirect(`/posts/${post._id}`);
+      reviewSubdoc.content = req.body.content;
+      reviewSubdoc.rating = req.body.rating;
+      post.save(function(err) {
+        res.redirect(`/posts/${post._id}`);
+      });
+    });
+  }
 
 function edit(req, res) {
     Post.findOne({'reviews._id': req.params.id}, function(err, post) {
