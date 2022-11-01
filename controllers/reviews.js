@@ -12,23 +12,26 @@ function update(req, res) {
 }
 
 function edit(req, res) {
-
-}
-
-function deleteReview(req, res) {
-    Post.findOne({
-        'reviews._id': req.params.id,
-        'reviews.user': req.user._id
-    }).then(function(post) {
-        if(!post) return res.redirect('/posts');
-        post.reviews.remove(req.params.id);
-        post.save().then(function() {
-            res.redirect(`posts/${post.id}`);
-        }).catch(function(err) {
-            return next(err);
-        });
+    Post.findOne({'reviews._id': req.params.id}, function(err, post) {
+      const review = post.reviews.id(req.params.id);
+      res.render('reviews/edit', {review, title: 'Edit Review'});
     });
 }
+
+function deleteReview(req, res, next) {
+    Post.findOne({
+      'reviews._id': req.params.id,
+      'reviews.user': req.user._id
+    }).then(function(post) {
+      if (!post) return res.redirect('/posts');
+      post.reviews.remove(req.params.id);
+      post.save().then(function() {
+        res.redirect(`/posts/${post._id}`);
+      }).catch(function(err) {
+        return next(err);
+      });
+    });
+  }
 
 function create(req, res) {
     Post.findById(req.params.id, function(err, post) {

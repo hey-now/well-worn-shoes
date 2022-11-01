@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<section>
+    <table>
+        <thead>
+            <tr>
+                <th>Review</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= review.content %></td>
+                <td><%= review.rating %></td>
+            </tr>
+        </tbody>
+    </table>
+    <form action="/reviews/<%= review._id %>?_method=PUT" method="POST">
+        <input name="content" value="<%= review.content %>">
+        <input name="rating" value="<%= review.rating %>">
+        <button type="submit">UPDATE REVIEW</button>
+    </form><br>
+</section>
+
+<%- include('../partials/footer') %>
