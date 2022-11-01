@@ -2,19 +2,19 @@
 
 <main>
     <h1><%= title %></h1>
-    <form id="newShoe" action="">
+    <form id="newShoe" action="/posts" method="POST">
         <div id="imgUpload">
-            <input id="imgUploadText"type="text">
+            <input id="imgUploadText"type="text" name="imgUrl">
             <p>Enter Image URL Here!</p>
         </div>
         <div id="postInfo">
             <label for="">Add Title:</label>
-            <input type="text">
+            <input type="text" name="title">
             <label for="">Add Description:</label>
-            <input type="text">
+            <input type="text" name="description">
             <label for="">Add Location:</label>
-            <input type="text">
-            <button id="saveNew">Hang that Shoe!</button>
+            <input type="text" name="destination">
+            <input type="submit" id="saveNew" value="Hang that Shoe!">
         </div>
     </form>
 </main>

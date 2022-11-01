@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<main>
+  <h1><%= title %></h1>
+  <div id="posts">
+    <% posts.forEach(function(p) { %>
+        <div><%= p.destination %></div>
+        <div><%= p.title %></div>
+        <div>
+            <img src="<%= p.imgUrl %>" alt="image"></div>
+        <div><%= p.userName %></div>
+        <div>
+            <img src="<%= p.userAvatar %>" alt="">
+        </div>
+    <% }); %>
+  </div>  
+</main>
+
+<%- include('../partials/footer') %>
