@@ -5,7 +5,8 @@ module.exports = {
     dashboard,
     favorites,
     new: newPost,
-    create
+    create,
+    show
 };
 
 function index(req, res) {
@@ -21,6 +22,12 @@ function favorites(req, res) {
 function dashboard(req, res) {
     Post.find({user: req.user}, function(err, posts) {
         res.render('posts/dashboard', {title: 'Shoe Rack', posts});
+    });
+}
+
+function show(req, res) {
+    Post.findById(req.params.id, function(err, post) {
+        res.render('posts/show', { title: 'Post Detail', post });
     });
 }
 
