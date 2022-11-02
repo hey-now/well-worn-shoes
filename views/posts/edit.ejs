@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<section>
+    <table>
+        <thead>
+            <tr>
+                <th>Image URL</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Destination</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= post.imgUrl %></td>
+                <td><%= post.title %></td>
+                <td><%= post.description %></td>
+                <td><%= post.destination %></td>
+            </tr>
+        </tbody>
+    </table>
+    <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
+        <input name="imgUrl" value="<%= post.imgUrl %>">
+        <input name="title" value="<%= post.title %>">
+        <input name="description" value="<%= post.description %>">
+        <input name="destination" value="<%= post.destination %>">
+        <button type="submit">Update Shoe</button>
+    </form><br>
+</section>
+
+<%- include('../partials/footer') %>

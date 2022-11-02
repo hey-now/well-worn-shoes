@@ -14,6 +14,11 @@
     <div><%= post.description%></div>
     <div>Destination: </div>
     <div><%= post.destination%></div>
+    <% if (user?._id.equals(post.user)) { %>
+        <form action="/posts/<%= post._id %>/edit" method="GET">
+            <input type="submit" value="Edit Post">
+        </form>
+    <% } %>
 </section>
 
 <br><br><h2>Reviews</h2>

@@ -6,8 +6,16 @@ module.exports = {
     favorites,
     new: newPost,
     create,
-    show
+    show,
+    edit
 };
+
+function edit(req, res) {
+    Post.findOne({_id: req.params.id}, function(err, post) {
+      if (err || !post) return res.redirect('/posts');
+      res.render('posts/edit', { title: 'Edit Post', post });
+    });
+  }
 
 function index(req, res) {
     Post.find({}, function(err, posts) {

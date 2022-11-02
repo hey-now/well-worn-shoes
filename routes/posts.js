@@ -10,6 +10,7 @@ router.get('/', postsCtrl.index);
 router.get('/new', ensureLoggedIn, postsCtrl.new);
 router.get('/dashboard', ensureLoggedIn, postsCtrl.dashboard);
 router.get('/favorites', ensureLoggedIn, postsCtrl.favorites);
+router.get('/:id/edit', ensureLoggedIn, postsCtrl.edit);
 router.get('/:id', postsCtrl.show);
 router.post('/', ensureLoggedIn, postsCtrl.create);
 
