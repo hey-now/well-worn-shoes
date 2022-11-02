@@ -99,5 +99,15 @@ label {
   border: 5px solid grey;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+  "destination destination destination destination destination"
+  "title title title title title"
+  "post-img post-img post-img post-img post-img"
+  "user user user user user "
+  "avatar avatar avatar avatar avatar"
 }
+/* #destination, #title, #post-img, #user, #avatar {
+  grid-area: destination;
+  height: 500px;
+} */
