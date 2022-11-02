@@ -4,18 +4,18 @@
     <h1><%= title %></h1>
     <div id="all-posts">
       <% posts.forEach(function(p) { %>
-        <div id="destination"><%= p.destination %></div>
-        <div id="title"><%= p.title %></div>
-        <div id="post-image">
-            <a href="/posts/<%= p._id %>">
+        <a id="postsA" href="/posts/<%= p.id %>">
+            <div id="destination"><%= p.destination %></div>
+            <div id="title"><%= p.title %></div>
+            <div id="post-image">
                 <img src="<%= p.imgUrl %>" alt="image">
-            </a>
-        </div>
-        <div id="user"><%= p.userName %></div>
-        <div id="avatar">
-            <img src="<%= p.userAvatar %>" alt="">
-        </div>
-      <% }); %>
+            </div>
+            <div id="user"><%= p.userName %></div>
+            <div id="avatar">
+                <img src="<%= p.userAvatar %>" alt="">
+            </div>
+          <% }); %>
+        </a>
     </div>  
 </main>
 

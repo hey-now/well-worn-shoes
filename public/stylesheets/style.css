@@ -39,8 +39,6 @@ nav > a {
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
-}
-a {
   color: whitesmoke;
 }
 img {
@@ -56,7 +54,7 @@ img {
 }
 #avatarNav {
   border-radius: 50%;
-  border: 5px solid red;
+  border: 5px solid whitesmoke;
   scale: 0.50;
   margin-right: -75px;
 }
@@ -72,6 +70,15 @@ img {
   background-color: rgba(0, 0, 0, .60);
   padding: 20px;
   border-radius: 20px;
+}
+#postsA {
+  color: black;
+  border: 2px solid grey;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10%;
+  background-color: rgba(126, 193, 210, .65);
+  margin: 5px;
 }
 #newShoe {
   display: grid;
