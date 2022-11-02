@@ -6,9 +6,11 @@
   </head>
   <body>
     <nav>
-        <img src="https://imgur.com/s8cMcqV.jpeg" alt="logo">
-        <a href="/posts" <%- title === 'Explore Shoes' ? 'class="active"' : '' %>>HOME</a> |
-        <a href="/search">SEARCH</a> |
+        <a href="/">
+            <img src="https://imgur.com/s8cMcqV.jpeg" alt="logo">
+        </a>
+        <a href="/posts" <%- title === 'Explore Shoes' ? 'class="active"' : '' %>>Newest Shoes</a> |
+        <a href="/search">Search Shoes</a> |
         <% if(user) { %>
             <a class="options" href="/posts/dashboard" <%- title === 'Dashboard' ? 'class="active"' : '' %>>Shoe Rack</a> |
             <a class="options" href="/posts/favorites" <%- title === 'Favorites' ? 'class="active"' : '' %>>Favorite Shoes</a> |
