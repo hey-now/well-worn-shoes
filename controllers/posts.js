@@ -8,8 +8,19 @@ module.exports = {
     create,
     show,
     edit,
-    update
+    update,
+    delete: deletePost
 };
+
+function deletePost(req, res) {
+    Post.findOneAndDelete(
+      // Ensue that the book was created by the logged in user
+      {_id: req.params.id, user: req.user._id}, function(err) {
+        // Deleted book, so must redirect to index
+        res.redirect('/posts');
+      }
+    );
+  }
 
 function update(req, res) {
     Post.findOneAndUpdate(
