@@ -24,7 +24,7 @@ function deletePost(req, res) {
 
 function update(req, res) {
     Post.findOneAndUpdate(
-      {_id: req.params.id},
+      {_id: req.params.id, user: req.user._id},
       // update object with updated properties
       req.body,
       // options object with new: true to make sure updated doc is returned
@@ -37,7 +37,7 @@ function update(req, res) {
   }
 
 function edit(req, res) {
-    Post.findOne({_id: req.params.id}, function(err, post) {
+    Post.findOne({_id: req.params.id, user: req.user._id}, function(err, post) {
       if (err || !post) return res.redirect('/posts');
       res.render('posts/edit', { title: 'Edit Post', post });
     });
