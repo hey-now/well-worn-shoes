@@ -22,7 +22,7 @@
             <input type="submit" value="Delete Shoe">
         </form>
     <% } %>
-    <% if (user) { %>
+    <% if (!user?._id.equals(post.user)) { %>
         <form action="/posts/<%= post._id %>" method="POST">
             <input type="submit" value="Add to Favorite Shoes">
         </form>
