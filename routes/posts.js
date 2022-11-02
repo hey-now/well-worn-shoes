@@ -15,6 +15,7 @@ router.put('/:id', ensureLoggedIn, postsCtrl.update);
 router.delete('/:id', ensureLoggedIn, postsCtrl.delete);
 router.get('/:id', postsCtrl.show);
 router.post('/', ensureLoggedIn, postsCtrl.create);
+router.post('/:id', ensureLoggedIn, postsCtrl.addFav);
 
 
 module.exports = router;

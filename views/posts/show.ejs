@@ -22,6 +22,11 @@
             <input type="submit" value="Delete Shoe">
         </form>
     <% } %>
+    <% if (user) { %>
+        <form action="/posts/<%= post._id %>" method="POST">
+            <input type="submit" value="Add to Favorite Shoes">
+        </form>
+    <% } %>
 </section>
 
 <br><br><h2>Reviews</h2>

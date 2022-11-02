@@ -9,8 +9,21 @@ module.exports = {
     show,
     edit,
     update,
-    delete: deletePost
+    delete: deletePost,
+    addFav
 };
+
+function addFav(req, res) {
+    Post.findById(req.params.id, function(err, post) {
+      // Ensure that user is not already in usersReading
+      // See "Finding a Subdocument" in https://mongoosejs.com/docs/subdocs.html
+      if (post.usersFav.includes(req.user._id)) return res.redirect('/posts/favorites');
+      post.usersFav.push(req.user._id);
+      post.save(function(err) {
+        res.redirect('/posts/favorites');
+      });
+    });
+  }
 
 function deletePost(req, res) {
     Post.findOneAndDelete(
@@ -50,7 +63,9 @@ function index(req, res) {
 }
 
 function favorites(req, res) {
-    res.render('posts/favorites', {title: 'Favorite Shoes'});
+    Post.find({user: req.user, usersFav: req.user}, function(err, posts) {
+    res.render('posts/favorites', { title: 'Favorite Shoes', posts });
+    });
 }
 
 function dashboard(req, res) {
@@ -70,7 +85,6 @@ function newPost(req, res) {
 }
 
 function create(req, res) {
-    console.log('req.user: ', req.user);
     const post = new Post(req.body);
     post.user = req.user._id;
     post.userName = req.user.name;

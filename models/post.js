@@ -40,6 +40,10 @@ const postSchema = new Schema({
         type: String,
         required: true
     },
+    usersFav: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+    }],
     reviews: [reviewSchema],
     user: {
         type: Schema.Types.ObjectId,
