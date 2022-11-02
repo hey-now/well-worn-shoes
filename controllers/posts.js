@@ -57,10 +57,7 @@ function edit(req, res) {
   }
 
 function index(req, res) {
-    Post.find({}, function(err, posts) {
-        // post.createdAt.sort(function(a, b) {
-        //     return a.createdAt - b.createdAt;
-        // });
+    Post.find({}).sort('-createdAt').exec(function(err, posts) {
         res.render('posts/index', { title: 'Newest Shoes', posts });
     });
 }
