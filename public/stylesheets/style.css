@@ -95,7 +95,7 @@ label {
   justify-content: center;
   align-items: center;
 }
-#dash-post, #posts {
+#dash-post, #all-posts, #favs-post {
   border: 5px solid grey;
   display: grid;
   grid-template-columns: 1fr;
