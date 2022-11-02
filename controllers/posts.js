@@ -7,8 +7,23 @@ module.exports = {
     new: newPost,
     create,
     show,
-    edit
+    edit,
+    update
 };
+
+function update(req, res) {
+    Post.findOneAndUpdate(
+      {_id: req.params.id},
+      // update object with updated properties
+      req.body,
+      // options object with new: true to make sure updated doc is returned
+      {new: true},
+      function(err, post) {
+        if (err || !post) return res.redirect('/posts');
+        res.redirect(`/posts/${post._id}`);
+      }
+    );
+  }
 
 function edit(req, res) {
     Post.findOne({_id: req.params.id}, function(err, post) {
