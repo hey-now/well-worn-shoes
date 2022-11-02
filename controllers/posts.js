@@ -63,7 +63,7 @@ function index(req, res) {
 }
 
 function favorites(req, res) {
-    Post.find({user: req.user, usersFav: req.user}, function(err, posts) {
+    Post.find({usersFav: req.user}, function(err, posts) {
     res.render('posts/favorites', { title: 'Favorite Shoes', posts });
     });
 }

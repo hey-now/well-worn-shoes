@@ -2,7 +2,21 @@
 
 <main>
     <h1><%= user.name %>'s <%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div id="favs-post">
+      <% posts.forEach(function(p) { %>
+        <div id="destination"><%= p.destination %></div>
+        <div id="title"><%= p.title %></div>
+        <div id="post-image">
+            <a href="/posts/<%= p._id %>">
+                <img src="<%= p.imgUrl %>" alt="image">
+            </a>
+        </div>
+        <div id="user"><%= p.userName %></div>
+        <div id="avatar">
+            <img src="<%= p.userAvatar %>" alt="">
+        </div>
+      <% }); %>
+    </div>  
 </main>
 
 <%- include('../partials/footer') %>
