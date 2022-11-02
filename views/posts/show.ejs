@@ -9,11 +9,13 @@
         <img src="<%= post.imgUrl %>" alt="">
     </div>
     <div>Title: </div>
-    <div><%= post.title%></div>
+    <div><%= post.title %></div>
     <div>Description: </div>
-    <div><%= post.description%></div>
+    <div><%= post.description %></div>
     <div>Destination: </div>
-    <div><%= post.destination%></div>
+    <div><%= post.destination %></div>
+    <div>Likes: </div>
+    <div><%= post.usersFav.length %></div>
     <% if (user?._id.equals(post.user)) { %>
         <form action="/posts/<%= post._id %>/edit" method="GET">
             <input type="submit" value="Edit Shoe">

@@ -52,13 +52,16 @@ function update(req, res) {
 function edit(req, res) {
     Post.findOne({_id: req.params.id, user: req.user._id}, function(err, post) {
       if (err || !post) return res.redirect('/posts');
-      res.render('posts/edit', { title: 'Edit Post', post });
+      res.render('posts/edit', { title: 'Edit Shoe', post });
     });
   }
 
 function index(req, res) {
     Post.find({}, function(err, posts) {
-        res.render('posts/index', { title: 'All Posts', posts });
+        // post.createdAt.sort(function(a, b) {
+        //     return a.createdAt - b.createdAt;
+        // });
+        res.render('posts/index', { title: 'Newest Shoes', posts });
     });
 }
 
@@ -75,8 +78,9 @@ function dashboard(req, res) {
 }
 
 function show(req, res) {
-    Post.findById(req.params.id, function(err, post) {
-        res.render('posts/show', { title: 'Post Detail', post });
+    Post.findById(req.params.id).populate('usersFav').exec(function(err, post) {
+        console.log(post);
+        res.render('posts/show', { title: 'Shoe Detail', post });
     });
 }
 

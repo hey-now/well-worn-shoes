@@ -98,6 +98,10 @@ label {
 #dash-post, #all-posts, #favs-post {
   border: 5px solid grey;
   display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  column-gap: 20px;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   grid-template-areas:
