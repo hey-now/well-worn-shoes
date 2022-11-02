@@ -60,6 +60,19 @@ img {
   scale: 0.50;
   margin-right: -75px;
 }
+#landing {
+  background-image: url('https://imgur.com/4ntPDYv.gif');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: whitesmoke;
+}
+#landing-text {
+  text-align: center;
+  background-color: rgba(0, 0, 0, .60);
+  padding: 20px;
+  border-radius: 20px;
+}
 #newShoe {
   display: grid;
   grid-template-columns: 500px 500px;
