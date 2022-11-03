@@ -16,8 +16,12 @@ module.exports = {
 
 
 function search(req, res) {
-  Post.find({title: {$regex: new RegExp(req.query.search, 'i')}}).sort('-createdAt').exec(function(err, posts) {
-    console.log(posts);
+  Post.find({$or: [
+    {title: {$regex: new RegExp(req.query.search, 'i')}},
+    {destination: {$regex: new RegExp(req.query.search, 'i')}},
+    {description: {$regex: new RegExp(req.query.search, 'i')}},
+    {userName: {$regex: new RegExp(req.query.search, 'i')}}
+  ]}).sort('-createdAt').exec(function(err, posts) {
       res.render('posts/search', { title: 'Shoe Search', posts });
   });
 }
