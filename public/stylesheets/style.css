@@ -271,6 +271,11 @@ th, td {
   padding: 10px;
   color: whitesmoke;
 }
+#user-review {
+  text-align: left;
+}
 table {
   background-color: rgba(0, 0, 0, .60);
+  border-radius: 10px;
+  box-shadow: 0 0 50px hsla(0deg, 0%, 0%, 0.5);
 }

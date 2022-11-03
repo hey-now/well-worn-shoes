@@ -60,36 +60,36 @@
       <tbody>
         <% let total = 0 %>
         <% post.reviews.forEach(function(r) { %>
-          <% total += r.rating %>
-          <tr>
-            <td class="review-user"><img src="<%= r.userAvatar %>" referrerpolicy="no-referrer" alt="avatar"><%= r.userName %></td>
-            <td><%= r.createdAt.toLocaleDateString() %></td>
-            <td><%= r.content %></td>
-            <td><%= r.rating %></td>
-            <td>
-              <% if (user?._id.equals(r.user)) { %>
-                <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                  <button type="submit">Delete</button>
-                </form>
-                <% } %>
-              </td>
-              <td>
-              <% if (user?._id.equals(r.user)) { %>
-                <form action="/reviews/<%= r._id %>/edit" method="GET">
-                  <button type="submit">Edit</button>
-                </form>
-                <% } %>
-              </td>
-          </tr>
-        <% }); %>
+        <% total += r.rating %>
         <tr>
-          <td colspan="3"></td>
+          <td align="center" id="user-review"><img id="avatarNav" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" alt="avatar"><%= r.userName %></td>
+          <td><%= r.createdAt.toLocaleDateString() %></td>
+          <td><%= r.content %></td>
+          <td><%= r.rating %></td>
           <td>
-            <strong>
-              <%= (total / post.reviews.length).toFixed(1) %>
-            </strong>
+            <% if (user?._id.equals(r.user)) { %>
+            <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+              <button type="submit">Delete</button>
+            </form>
+            <% } %>
           </td>
+          <td>
+            <% if (user?._id.equals(r.user)) { %>
+              <form action="/reviews/<%= r._id %>/edit" method="GET">
+                <button type="submit">Edit</button>
+              </form>
+            <% } %>
+            </td>
         </tr>
+        <% }); %>
+      <tr>
+        <td colspan="3"></td>
+        <td>
+          <strong>
+            <%= (total / post.reviews.length).toFixed(1) %>
+          </strong>
+        </td>
+      </tr>
       </tbody>
     </table>
   <% } else { %>
