@@ -60,7 +60,7 @@ img {
   margin-right: -75px;
 }
 #landing {
-  background-image: url('https://imgur.com/4ntPDYv.gif');
+  background-image: url('https://imgur.com/4ntPDYv.gif'), radial-gradient(#5DE6DE, #63A4FF);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
