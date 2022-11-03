@@ -70,15 +70,18 @@ img {
   background-color: rgba(0, 0, 0, .60);
   padding: 20px;
   border-radius: 20px;
+  margin-top: 50px;
 }
 #postsA {
   color: black;
   border: 2px solid grey;
+  width: 200px;
   text-align: center;
   text-decoration: none;
   border-radius: 10%;
   background-color: rgba(126, 193, 210, .65);
   margin: 5px;
+  box-shadow: 0 0 15px hsla(0deg, 0%, 0%, 0.5);
 }
 #newShoe {
   display: grid;
@@ -116,7 +119,6 @@ label {
   align-items: center;
 }
 #dash-post, #all-posts, #favs-post {
-  border: 5px solid grey;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -135,4 +137,7 @@ label {
   grid-area: destination;
   height: 500px;
 } */
-
+#add-review-form {
+  align-items: center;
+  justify-content: center;
+}

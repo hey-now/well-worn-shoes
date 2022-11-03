@@ -6,20 +6,20 @@
   </head>
   <body>
     <nav>
-        <a href="/">
+        <a id="aNav" href="/">
             <img src="https://imgur.com/s8cMcqV.jpeg" alt="logo">
         </a>
-        <a href="/posts" <%- title === 'Explore Shoes' ? 'class="active"' : '' %>>Newest Shoes</a> |
-        <a href="/search">Search Shoes</a> |
+        <a id="aNav" href="/posts" <%- title === 'Explore Shoes' ? 'class="active"' : '' %>>Newest Shoes</a> |
+        <a id="aNav" href="/search">Search Shoes</a> |
         <% if(user) { %>
-            <a class="options" href="/posts/dashboard" <%- title === 'Dashboard' ? 'class="active"' : '' %>>Shoe Rack</a> |
-            <a class="options" href="/posts/favorites" <%- title === 'Favorites' ? 'class="active"' : '' %>>Favorite Shoes</a> |
-            <a class="options" href="/posts/new" <%- title === 'Create New Shoe' ? 'class="active"' : '' %>>New Shoe</a> |
-            <a class="loginAvatar" href="/profile" <%- title === 'Profile' ? 'class="active"' : '' %>>
+            <a id="aNav" class="options" href="/posts/dashboard" <%- title === 'Dashboard' ? 'class="active"' : '' %>>Shoe Rack</a> |
+            <a id="aNav" class="options" href="/posts/favorites" <%- title === 'Favorites' ? 'class="active"' : '' %>>Favorite Shoes</a> |
+            <a id="aNav" class="options" href="/posts/new" <%- title === 'Create New Shoe' ? 'class="active"' : '' %>>New Shoe</a> |
+            <a id="aNav" class="loginAvatar" href="/profile" <%- title === 'Profile' ? 'class="active"' : '' %>>
                 <img id="avatarNav" src="<%= user.avatar %>" referrerpolicy="no-referrer" alt="avatar">
             </a>
             <a class="login"href="/profile" <%- title === 'Profile' ? 'class="active"' : '' %>><%= user.name%></a>
-            <a href="/logout">LOG OUT</a>
+            <a id="aNav" href="/logout">LOG OUT</a>
         <% } else { %>
             <a href="/auth/google" class="login">LOG IN <img src="https://i.imgur.com/FHjYyi0.png"></a>
         <% } %>

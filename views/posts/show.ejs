@@ -1,18 +1,18 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-    <div><%= post.userName %></div>
-    <div>
+    <div id="show-user"><h3><%= post.userName %></h3></div>
+    <div id="show-avatar">
         <img src="<%= post.userAvatar %>" alt="">
-    </div>
-    <div>
-        <img src="<%= post.imgUrl %>" alt="">
     </div>
     <div>Title: </div>
     <div><%= post.title %></div>
     <div>Description: </div>
     <div><%= post.description %></div>
     <div>Destination: </div>
+    <div>
+        <img src="<%= post.imgUrl %>" alt="">
+    </div>
     <div><%= post.destination %></div>
     <div>Likes: </div>
     <div><%= post.usersFav.length %></div>
@@ -46,7 +46,7 @@
       <option value="5" selected>5</option>
     </select>
     <input type="submit" value="Add Review">
-  </form>
+  </form><br><br>
 <% } %>
 <% if (post.reviews.length) { %>
   <table>
