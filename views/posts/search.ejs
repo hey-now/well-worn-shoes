@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <main>
-    <h1><%= title %></h1>
+    <h1><%= title %></h1><br><br>
     <div id="search-posts">
         <% posts.forEach(function(p) { %>
             <% if (p = underfined) { %>
@@ -14,8 +14,8 @@
                     <img src="<%= p.imgUrl %>" alt="image">
                 </div>
                 <div id="user"><%= p.userName %></div>
-                <div id="avatar">
-                    <img src="<%= p.userAvatar %>" alt="">
+                <div id="divAvatar">
+                    <img id="avatar" src="<%= p.userAvatar %>" alt="">
                 </div>
             <% } %>
         <% }); %>

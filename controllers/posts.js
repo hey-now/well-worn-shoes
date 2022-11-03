@@ -14,8 +14,9 @@ module.exports = {
     search
 };
 
+
 function search(req, res) {
-  Post.find({title: req.body}).sort('-createdAt').exec(function(err, posts) {
+  Post.find({title: new RegExp(req.query.search)}).sort('-createdAt').exec(function(err, posts) {
       res.render('posts/search', { title: 'Shoe Search', posts });
   });
 }
@@ -23,7 +24,7 @@ function search(req, res) {
 // function search(req, res) {
 //   let postQuery = req.query.title ? {title: new RegExp(req.query.title, 'i')} : {};
 //   Post.find({postQuery}, function(err, posts) {
-//     res.render('/posts/search', { title: 'Shoe Search', posts, titleSearch: req.query.title } );
+//     res.render('/search', { title: 'Shoe Search', posts, titleSearch: req.query.title } );
 //   });
 // }
 
