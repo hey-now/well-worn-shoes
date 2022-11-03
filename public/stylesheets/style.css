@@ -88,25 +88,30 @@ img {
 }
 #postsA {
   color: black;
-  width: 200px;
+  width: 250px;
   text-align: center;
   text-decoration: none;
-  border-radius: 10%;
-  /* background-color: rgba(126, 193, 210, .65); */
+  border-radius: 10px;
   margin: 5px 5px 20px 5px;
   box-shadow: 0 0 15px hsla(0deg, 0%, 0%, 0.5);
   background-image: linear-gradient(#3EADCF, #ABE9CD);
 }
 #postsA:hover {
   color: black;
-  width: 200px;
+  width: 250px;
   text-align: center;
   text-decoration: none;
-  border-radius: 10%;
+  border-radius: 10px;
   margin: 5px 5px 20px 5px;
   box-shadow: 0 0 15px hsla(0deg, 0%, 0%, 0.5);
   background-image: linear-gradient(#3EADCF, #ABE9CD);
   transform: scale(1.3);
+}
+#postsA > div {
+  padding: 5px;
+}
+#title {
+  font-size: larger;
 }
 #newShoe {
   display: grid;
