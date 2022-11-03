@@ -9,15 +9,14 @@
         <a id="aNav" href="/">
             <img src="https://imgur.com/s8cMcqV.jpeg" alt="logo">
         </a>
-        <a id="aNav" href="/posts">Newest Shoes</a> |
+        <a id="aNav" href="/posts">Newest Shoes</a> 
         <form action="/posts/search" method="GET">
             <input name="search" id="search" placeholder="Search Shoes">
-            <button type="submit">Go</button>
         </form>
         <% if(user) { %>
             <a id="aNav" class="options" href="/posts/dashboard">Shoe Rack</a> |
             <a id="aNav" class="options" href="/posts/favorites">Favorite Shoes</a> |
-            <a id="aNav" class="options" href="/posts/new">New Shoe</a> |
+            <a id="aNav" class="options" href="/posts/new">New Shoe</a> 
             <a id="aNav" class="loginAvatar" href="/profile">
                 <img id="avatarNav" src="<%= user.avatar %>" referrerpolicy="no-referrer" alt="avatar">
             </a>
