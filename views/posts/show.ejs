@@ -4,35 +4,34 @@
     <div id="show-post-info">
       <img id="show-avatar" src="<%= post.userAvatar %>" alt="">
       <div id="show-user"><h3><%= post.userName %></h3></div>
-      <div>Title: </div>
-      <div><%= post.title %></div>
-      <div>Description: </div>
-      <div><%= post.description %></div>
-      <div>Destination: </div>
-      <div><%= post.destination %></div>
-      <div>Likes: </div>
-      <div><%= post.usersFav.length %></div>
+      <div id="show-title">Title: </div>
+      <div id="show-title-info"><%= post.title %></div>
+      <div id="show-desc">Description: </div>
+      <div id="show-desc-info"><%= post.description %></div>
+      <div id="show-dest">Destination: </div>
+      <div id="show-dest-info"><%= post.destination %></div>
+      <div id="show-likes">Likes: </div>
+      <div id="show-likes-info"><%= post.usersFav.length %></div>
       <% if (user?._id.equals(post.user)) { %>
-          <form action="/posts/<%= post._id %>/edit" method="GET">
+          <form id="edit" action="/posts/<%= post._id %>/edit" method="GET">
               <input type="submit" value="Edit Shoe">
           </form>
-          <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+          <form id="delete" action="/posts/<%= post._id %>?_method=DELETE" method="POST">
               <input type="submit" value="Delete Shoe">
           </form>
       <% } %>
       <% if (user && !user?._id.equals(post.user)) { %>
-          <form action="/posts/<%= post._id %>" method="POST">
+          <form id="favorite" action="/posts/<%= post._id %>" method="POST">
               <input type="submit" value="Add to Favorite Shoes">
           </form>
       <% } %>
-    </div>
+    </div><br>
       <img id="postImg" src="<%= post.imgUrl %>" alt="">
   </section>
 
-  <br><br><h2>Reviews</h2>
+  <br><br><h2>Reviews</h2><br>
   <% if (user) { %>
-    <form id="add-review-form" method="POST"
-      action="/posts/<%= post._id %>/reviews">
+    <form id="add-review-form" method="POST" action="/posts/<%= post._id %>/reviews">
       <label>Review:</label>
       <textarea name="content"></textarea>
       <label>Rating:</label>
@@ -70,7 +69,7 @@
             <td>
               <% if (user?._id.equals(r.user)) { %>
                 <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                  <button type="submit">X</button>
+                  <button type="submit">Delete</button>
                 </form>
                 <% } %>
               </td>

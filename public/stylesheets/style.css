@@ -121,7 +121,6 @@ img {
 label {
   align-self: center;
   justify-self: center;
-  border: 2px solid grey;
 }
 #saveNew {
   grid-column-end: span 2;
@@ -136,20 +135,96 @@ label {
   display: grid;
   justify-content: center;
   align-items: center;
-  border-radius: 5%;
+  border-radius: 10px;
   box-shadow: 0 0 15px hsla(0deg, 0%, 0%, 0.5);
   background-color: rgba(0, 0, 0, .80);
   grid-template-columns: 200px 200px 200px 200px;
   grid-template-rows: 50px 50px 50px 50px;
   grid-template-areas:
-  "user label input"
-  "user label input"
-  "user label input"
+  "user label input controls"
+  "user label input controls"
+  "user label input controls"
+}
+#show-avatar {
+  grid-area: user;
+  grid-row-end: span 2;
+  border-radius: 10%;
+  padding: 10px;
+  align-self: center;
+  justify-self: center;
+}
+#show-user {
+  grid-area: user;
+  grid-row-start: 3;
+  padding: 10px;
+  justify-self: center;
+}
+#show-title {
+  grid-area: label;
+  grid-row-end: 1;
+  justify-self: center;
+}
+#show-desc {
+  grid-area: label;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  justify-self: center;
+}
+#show-dest {
+  grid-area: label;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  justify-self: center;
+}
+#show-likes {
+  grid-area: label;
+  grid-row-start: 4;
+  grid-row-end: 4;
+  justify-self: center;
+}
+#show-title-info {
+  grid-area: input;
+  grid-row-end: 1;
+}
+#show-desc-info {
+  grid-area: input;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+#show-dest-info {
+  grid-area: input;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+#show-likes-info {
+  grid-area: input;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+#edit {
+  grid-area: controls;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  align-self: center;
+  justify-self: center;
+}
+#delete {
+  grid-area: controls;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  align-self: center;
+  justify-self: center;
+}
+#favorite {
+  grid-area: controls;
+  grid-row-start: 3;
+  align-self: center;
+  justify-self: center;
 }
 #postImg {
   height: 600px;
   width: 800px;
-  box-shadow: 0 0 15px hsla(0deg, 0%, 0%, 0.5);
+  box-shadow: 0 0 50px hsla(0deg, 0%, 0%, 0.5);
 }
 
 #dash-posts, #all-posts, #favs-posts, #search-posts {
@@ -167,13 +242,14 @@ label {
   "user user user user user "
   "avatar avatar avatar avatar avatar"
 }
-/* #destination, #title, #post-img, #user, #avatar {
-  grid-area: destination;
-  height: 500px;
-} */
 #add-review-form {
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  display: flex;
+  color: whitesmoke;
+  width: 500px;
+  background-color: rgba(0, 0, 0, .60);
+  border-radius: 10px;
 }
 #title, #destination, #user {
   color: white;
@@ -187,6 +263,14 @@ label {
 #postImg {
   height: 100%;
 }
-h1 {
+h1, h2 {
   color: whitesmoke;
+}
+th, td {
+  text-align: center;
+  padding: 10px;
+  color: whitesmoke;
+}
+table {
+  background-color: rgba(0, 0, 0, .60);
 }
