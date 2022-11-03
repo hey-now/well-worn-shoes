@@ -2,7 +2,7 @@
 
 <main>
     <h1><%= user.name %>'s <%= title %></h1>
-    <div id="favs-post">
+    <div id="favs-posts">
       <% posts.forEach(function(p) { %>
         <a id="postsA" href="/posts/<%= p.id %>">
             <div id="destination"><%= p.destination %></div>
