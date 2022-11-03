@@ -16,17 +16,11 @@ module.exports = {
 
 
 function search(req, res) {
-  Post.find({title: new RegExp(req.query.search)}).sort('-createdAt').exec(function(err, posts) {
+  Post.find({title: {$regex: new RegExp(req.query.search, 'i')}}).sort('-createdAt').exec(function(err, posts) {
+    console.log(posts);
       res.render('posts/search', { title: 'Shoe Search', posts });
   });
 }
-
-// function search(req, res) {
-//   let postQuery = req.query.title ? {title: new RegExp(req.query.title, 'i')} : {};
-//   Post.find({postQuery}, function(err, posts) {
-//     res.render('/search', { title: 'Shoe Search', posts, titleSearch: req.query.title } );
-//   });
-// }
 
 function addFav(req, res) {
     Post.findById(req.params.id, function(err, post) {
