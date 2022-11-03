@@ -131,6 +131,27 @@ label {
   justify-content: center;
   align-items: center;
 }
+#show-post-info {
+  color: whitesmoke;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5%;
+  box-shadow: 0 0 15px hsla(0deg, 0%, 0%, 0.5);
+  background-color: rgba(0, 0, 0, .80);
+  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-rows: 50px 50px 50px 50px;
+  grid-template-areas:
+  "user label input"
+  "user label input"
+  "user label input"
+}
+#postImg {
+  height: 600px;
+  width: 800px;
+  box-shadow: 0 0 15px hsla(0deg, 0%, 0%, 0.5);
+}
+
 #dash-posts, #all-posts, #favs-posts, #search-posts {
   display: grid;
   justify-content: center;

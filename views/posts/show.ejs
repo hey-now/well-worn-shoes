@@ -1,18 +1,14 @@
 <%- include('../partials/header') %>
 <main>
   <section id="show-page">
+    <div id="show-post-info">
+      <img id="show-avatar" src="<%= post.userAvatar %>" alt="">
       <div id="show-user"><h3><%= post.userName %></h3></div>
-      <div id="show-avatar">
-          <img src="<%= post.userAvatar %>" alt="">
-      </div>
       <div>Title: </div>
       <div><%= post.title %></div>
       <div>Description: </div>
       <div><%= post.description %></div>
       <div>Destination: </div>
-      <div>
-          <img id="postImg" src="<%= post.imgUrl %>" alt="">
-      </div>
       <div><%= post.destination %></div>
       <div>Likes: </div>
       <div><%= post.usersFav.length %></div>
@@ -29,6 +25,8 @@
               <input type="submit" value="Add to Favorite Shoes">
           </form>
       <% } %>
+    </div>
+      <img id="postImg" src="<%= post.imgUrl %>" alt="">
   </section>
 
   <br><br><h2>Reviews</h2>
