@@ -28,8 +28,6 @@ function search(req, res) {
 
 function addFav(req, res) {
     Post.findById(req.params.id, function(err, post) {
-      // Ensure that user is not already in usersReading
-      // See "Finding a Subdocument" in https://mongoosejs.com/docs/subdocs.html
       if (post.usersFav.includes(req.user._id)) return res.redirect('/posts/favorites');
       post.usersFav.push(req.user._id);
       post.save(function(err) {
@@ -40,9 +38,7 @@ function addFav(req, res) {
 
 function deletePost(req, res) {
     Post.findOneAndDelete(
-      // Ensue that the book was created by the logged in user
       {_id: req.params.id, user: req.user._id}, function(err) {
-        // Deleted book, so must redirect to index
         res.redirect('/posts');
       }
     );
@@ -51,9 +47,7 @@ function deletePost(req, res) {
 function update(req, res) {
     Post.findOneAndUpdate(
       {_id: req.params.id, user: req.user._id},
-      // update object with updated properties
       req.body,
-      // options object with new: true to make sure updated doc is returned
       {new: true},
       function(err, post) {
         if (err || !post) return res.redirect('/posts');
