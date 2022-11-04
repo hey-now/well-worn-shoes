@@ -55,6 +55,9 @@ Requirements:
 * Be styled such that the app looks and feels similar to apps we use on a daily basis
 * Be deployed online
 
+*  Original Trello Board Design link:
+
+* <a href="https://trello.com/b/HMbfUcU5/well-worn-shoes">Click here to view!</a>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -75,6 +78,8 @@ Requirements:
 
 
 ## Functionality
+
+
 
 * Users will arrive at a landing page that offers:
   * A chance view all Shoes (posts)
