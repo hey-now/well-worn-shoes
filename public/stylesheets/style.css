@@ -315,5 +315,11 @@ button {
   color: whitesmoke;
 }
 #edit-post {
-padding: 20px;
+  padding: 20px;
+}
+#rating {
+  width: 30px;
+}
+#review-edit {
+  display: flex;
 }
