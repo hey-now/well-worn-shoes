@@ -1,31 +1,33 @@
 <%- include('../partials/header') %>
 
-<section>
-    <table>
-        <thead>
-            <tr>
-                <th>Image URL</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Destination</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><%= post.imgUrl %></td>
-                <td><%= post.title %></td>
-                <td><%= post.description %></td>
-                <td><%= post.destination %></td>
-            </tr>
-        </tbody>
-    </table>
-    <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
-        <input name="imgUrl" value="<%= post.imgUrl %>">
-        <input name="title" value="<%= post.title %>">
-        <input name="description" value="<%= post.description %>">
-        <input name="destination" value="<%= post.destination %>">
-        <button type="submit">Update Shoe</button>
-    </form><br>
-</section>
+<main>
+    <section id="edit-page"><br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Image URL</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Destination</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= post.imgUrl %></td>
+                    <td><%= post.title %></td>
+                    <td><%= post.description %></td>
+                    <td><%= post.destination %></td>
+                </tr>
+            </tbody>
+        </table><br>
+        <form id="edit-post" action="/posts/<%= post._id %>?_method=PUT" method="POST">
+            <textarea name="imgUrl" value="<%= post.imgUrl %>"><%= post.imgUrl %></textarea>
+            <textarea name="title" value="<%= post.title %>"><%= post.title %></textarea>
+            <textarea name="description" value="<%= post.description %>"><%= post.description %></textarea>
+            <textarea name="destination" value="<%= post.destination %>"><%= post.destination %></textarea><br><br>
+            <button type="submit">Update Shoe</button>
+        </form><br>
+    </section>
+</main>
 
 <%- include('../partials/footer') %>
