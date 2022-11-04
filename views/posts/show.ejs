@@ -14,10 +14,10 @@
       <div id="show-likes-info"><%= post.usersFav.length %></div>
       <% if (user?._id.equals(post.user)) { %>
           <form id="edit" action="/posts/<%= post._id %>/edit" method="GET">
-              <input type="submit" value="Edit Shoe">
+              <input id="update" type="submit" value="Edit Shoe">
           </form>
           <form id="delete" action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-              <input type="submit" value="Delete Shoe">
+              <input id="update" type="submit" value="Delete Shoe">
           </form>
       <% } %>
       <% if (user && !user?._id.equals(post.user)) { %>
@@ -42,7 +42,7 @@
         <option value="4">4</option>
         <option value="5" selected>5</option>
       </select>
-      <input type="submit" value="Add Review">
+      <input id="update" type="submit" value="Add Review">
     </form><br><br>
   <% } %>
   <% if (post.reviews.length) { %>
