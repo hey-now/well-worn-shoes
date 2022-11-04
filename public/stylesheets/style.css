@@ -114,6 +114,8 @@ img {
   font-size: larger;
 }
 #newShoe {
+  border-radius: 10px;
+  box-shadow: 0 0 15px hsla(0deg, 0%, 0%, 0.5);
   display: grid;
   grid-template-columns: 500px 500px;
   grid-template-rows: 500px 1fr 1fr;
@@ -124,23 +126,53 @@ img {
 }
 #imgUrl {
   grid-area: imgUpload;
-  border: 5px solid grey;
   background-image: url('https://imgur.com/brw99fp.gif');
   background-size: cover;
+  border-radius: 10px;
+}
+#imgUrl > ::placeholder {
+  color: gray;
+}
+#imgUrlText {
+  height: 100px;
+  margin-left: 135px;
+  margin-top: 150px;
 }
 #postInfo {
   grid-area: sidebar;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  border: 5px solid grey;
+  background-color: rgba(0, 0, 0, .60);
 }
 label {
   align-self: center;
   justify-self: center;
+  color: whitesmoke;
+  font-size: larger;
 }
 #saveNew {
   grid-column-end: span 2;
+  padding:10px;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  padding:10px;
+  border-radius:10px;
+  background-image: linear-gradient(#5DE6DE, #63A4FF);
+  color: whitesmoke;
+  font-size: larger;
+}
+#saveNew:hover {
+  grid-column-end: span 2;
+  padding:10px;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  padding:10px;
+  border-radius:10px;
+  background-image: linear-gradient(#5DE6DE, #63A4FF);
+  color: whitesmoke;
+  font-size: larger;
+  transform: scale(1.1);
 }
 #show-page {
   display: grid;
@@ -322,4 +354,8 @@ button {
 }
 #review-edit {
   display: flex;
+}
+textarea {
+  border-radius: 10px;
+  padding: 5%;
 }
